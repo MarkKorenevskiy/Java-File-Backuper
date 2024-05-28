@@ -8,23 +8,23 @@ public class BackupFileVisitor extends SimpleFileVisitor<Path> {
 
     private final Path sourceDirectoryFilepath;
     private final Path destinationDirectoryFilepath;
-    private BackupChecksumRegistry checksumRegistry;
+    private ChecksumRegistry checksumRegistry;
 
 
     public static BackupFileVisitor getInstance(Path sourceDirectoryFilepath, Path destinationDirectoryFilepath,
-                                                BackupChecksumRegistry checksumRegistry) {
+                                                ChecksumRegistry checksumRegistry) {
         return new BackupFileVisitor(sourceDirectoryFilepath, destinationDirectoryFilepath, checksumRegistry);
     }
 
 
     public static BackupFileVisitor getInstance(String sourceDirectoryFilename, String destinationDirectoryFilepath,
-                                                BackupChecksumRegistry checksumRegistry) {
+                                                ChecksumRegistry checksumRegistry) {
         return getInstance(Path.of(sourceDirectoryFilename), Path.of(destinationDirectoryFilepath), checksumRegistry);
     }
 
 
     private BackupFileVisitor(Path sourceDirectoryFilepath, Path destinationDirectoryFilepath,
-                              BackupChecksumRegistry checksumRegistry) {
+                              ChecksumRegistry checksumRegistry) {
         this.sourceDirectoryFilepath = sourceDirectoryFilepath;
         this.destinationDirectoryFilepath = destinationDirectoryFilepath;
         this.checksumRegistry = checksumRegistry;

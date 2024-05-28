@@ -20,7 +20,7 @@ public class Backuper {
 
     public void backupDirectory() {
 
-        BackupChecksumRegistry checksumRegistry = new BackupChecksumRegistry(sourcePath, destinationPath);
+        ChecksumRegistry checksumRegistry = new ChecksumRegistry(sourcePath, destinationPath);
         checksumRegistry.initializeChecksumRegistry();
 
         BackupFileVisitor fileVisitor = BackupFileVisitor.getInstance(sourcePath, destinationPath, checksumRegistry);

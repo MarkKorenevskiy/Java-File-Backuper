@@ -10,16 +10,16 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BackupChecksumRegistry {
+public class ChecksumRegistry {
 
     private final Path sourceDirectoryPath;
     private final Path destinationDirectoryPath;
     private Map<String, String> checksumFileRegistry;
 
-    private final String CHECKSUM_REGISTRY_FILENAME = "registry.ser";
+    private final String CHECKSUM_REGISTRY_FILENAME = ".registry.ser";
 
 
-    public BackupChecksumRegistry(Path sourceDirectoryPath, Path destinationDirectoryPath) {
+    public ChecksumRegistry(Path sourceDirectoryPath, Path destinationDirectoryPath) {
         this.sourceDirectoryPath = sourceDirectoryPath;
         this.destinationDirectoryPath = destinationDirectoryPath;
     }
