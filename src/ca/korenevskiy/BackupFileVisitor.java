@@ -8,7 +8,7 @@ public class BackupFileVisitor extends SimpleFileVisitor<Path> {
 
     private final Path sourceDirectoryFilepath;
     private final Path destinationDirectoryFilepath;
-    private ChecksumRegistry checksumRegistry;
+    private final ChecksumRegistry checksumRegistry;
 
 
     public static BackupFileVisitor getInstance(Path sourceDirectoryFilepath, Path destinationDirectoryFilepath,
@@ -60,7 +60,7 @@ public class BackupFileVisitor extends SimpleFileVisitor<Path> {
 
 
     @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
 
         if (checksumRegistry.shouldSourceFileBeCopied(file)) {
             System.out.println("Copying file: " + file.toString());
